@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:redesign/widgets/detail.dart';
 import 'package:redesign/widgets/detailinside.dart';
 
 class ItemInside extends StatelessWidget {

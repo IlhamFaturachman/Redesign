@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redesign/const/constants.dart';
-import 'package:redesign/widgets/detail.dart';
 import 'package:redesign/widgets/itemdetail.dart';
 
 class Detail extends StatefulWidget {
