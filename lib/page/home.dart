@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:redesign/widgets/itemlist.dart';
+import 'package:redesign/page/detail.dart';
+import 'package:redesign/widgets/card.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,7 +15,12 @@ class _HomeState extends State<Home> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //h3h3
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Detail(),
+            ),
+          );
         },
         child: Icon(Icons.settings_input_component_rounded),
         backgroundColor: Colors.orangeAccent,
@@ -79,10 +86,10 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 13, 95, 20),
+                    padding: const EdgeInsets.fromLTRB(15, 20, 95, 10),
                     child: Text(
                       "Popular Places",
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                         fontSize: 30,
                       ),
                     ),

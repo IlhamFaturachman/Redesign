@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CardBapak extends StatelessWidget {
+class CardDetail extends StatelessWidget {
   final String judul, gambar;
   final String price;
-  const CardBapak({
+  const CardDetail({
     Key key,
     this.judul,
     this.gambar,
@@ -18,11 +18,10 @@ class CardBapak extends StatelessWidget {
             height: 70,
             width: 70,
             margin: EdgeInsets.only(
-              top: 10,
               left: 30,
             ),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(40.0),
                 image: DecorationImage(
                   image: AssetImage(gambar),
                 ),
@@ -45,25 +44,44 @@ class CardBapak extends StatelessWidget {
                     judul,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 19,
+                      fontSize: 30,
+                      color: Colors.white,
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(
-                    10,
-                    5,
-                    100,
-                    5,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Icon(
+                          Icons.star_purple500_sharp,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(
+                          10,
+                          0,
+                          0,
+                          0,
+                        ),
+                        child: Text(
+                          price,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    price,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 14,
-                    ),
-                  ),
+                  // margin: EdgeInsets.fromLTRB(
+                  //   10,
+                  //   5,
+                  //   100,
+                  //   5,
+                  // ),
                 )
               ],
             ),
