@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:redesign/const/constants.dart';
 import 'package:redesign/widgets/itemdetail.dart';
 import 'package:redesign/widgets/iteminside.dart';
+import 'package:redesign/widgets/itemmembers.dart';
 
 class Detail extends StatefulWidget {
   @override
@@ -59,7 +60,7 @@ class _DetailState extends State<Detail> {
               Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Container(
-                  height: size.height * 0.6,
+                  height: size.height * 1,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -84,6 +85,15 @@ class _DetailState extends State<Detail> {
                         ),
                       ),
                       ItemInside(),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 25),
+                        child: Text(
+                          "Members",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 22),
+                        ),
+                      ),
+                      MembersInside()
                     ],
                   ),
                 ),

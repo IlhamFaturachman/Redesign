@@ -11,7 +11,12 @@ class ItemInside extends StatelessWidget {
       child: Column(
         children: <Widget>[
           InsideCard(
-            gambar: 'assets/images/game2.png',
+            gambar: 'assets/images/calender.png',
+            judul: 'Zenith Tennis Centre',
+            waktu: '18.00 - 21.00',
+          ),
+          InsideCard(
+            gambar: 'assets/images/map.png',
             judul: 'Zenith Tennis Centre',
             waktu: '18.00 - 21.00',
           ),

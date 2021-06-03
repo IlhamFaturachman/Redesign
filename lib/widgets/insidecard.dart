@@ -21,7 +21,7 @@ class InsideCard extends StatelessWidget {
               40,
               40,
               27,
-              40,
+              15,
             ),
             decoration: BoxDecoration(
               border: Border.all(width: 2.0, color: Colors.black12),
@@ -37,17 +37,23 @@ class InsideCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.fromLTRB(10, 10, 0, 20),
+                  margin: EdgeInsets.fromLTRB(10, 10, 0, 7),
                   child: Text(
                     judul,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(left: 10),
-                  child: Text(
-                    waktu,
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      left: 10,
+                      top: 10,
+                    ),
+                    child: Text(
+                      waktu,
+                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                    ),
                   ),
                 )
               ],
