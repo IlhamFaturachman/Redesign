@@ -76,12 +76,6 @@ class CardDetail extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // margin: EdgeInsets.fromLTRB(
-                  //   10,
-                  //   5,
-                  //   100,
-                  //   5,
-                  // ),
                 )
               ],
             ),

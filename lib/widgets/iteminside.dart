@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:redesign/widgets/detailinside.dart';
+import 'package:redesign/widgets/insidecard.dart';
 
 class ItemInside extends StatelessWidget {
   const ItemInside({
@@ -12,19 +12,9 @@ class ItemInside extends StatelessWidget {
         children: <Widget>[
           InsideCard(
             gambar: 'assets/images/game2.png',
-            judul: 'Zenith Tennis\nCentre',
-            price: r'4.8',
+            judul: 'Zenith Tennis Centre',
+            waktu: '18.00 - 21.00',
           ),
-          // CardDetail(
-          //   gambar: 'assets/images/montor.png',
-          //   judul: 'Car X',
-          //   price: r'$.25 each copy',
-          // ),
-          // CardDetail(
-          //   gambar: 'assets/images/sage.png',
-          //   judul: 'Valorant',
-          //   price: r'$.20 each copy',
-          // ),
         ],
       ),
     );

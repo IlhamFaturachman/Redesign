@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redesign/const/constants.dart';
 import 'package:redesign/widgets/itemdetail.dart';
+import 'package:redesign/widgets/iteminside.dart';
 
 class Detail extends StatefulWidget {
   @override
@@ -81,7 +82,8 @@ class _DetailState extends State<Detail> {
                             ),
                           ],
                         ),
-                      )
+                      ),
+                      ItemInside(),
                     ],
                   ),
                 ),
