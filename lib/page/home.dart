@@ -88,7 +88,7 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(15, 20, 95, 10),
                     child: Text(
-                      "Popular Places",
+                      "Popular Games",
                       style: GoogleFonts.montserrat(
                         fontSize: 30,
                       ),

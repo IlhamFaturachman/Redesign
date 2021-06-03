@@ -12,12 +12,12 @@ class ItemInside extends StatelessWidget {
         children: <Widget>[
           InsideCard(
             gambar: 'assets/images/calender.png',
-            judul: 'Zenith Tennis Centre',
-            waktu: '18.00 - 21.00',
+            judul: 'Thursday, June 10',
+            waktu: '09.30 - 11.00 PM',
           ),
           InsideCard(
             gambar: 'assets/images/map.png',
-            judul: 'Zenith Tennis Centre',
+            judul: 'Washington, DC',
             waktu: '18.00 - 21.00',
           ),
         ],

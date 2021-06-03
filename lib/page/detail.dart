@@ -87,13 +87,45 @@ class _DetailState extends State<Detail> {
                       ItemInside(),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 25),
-                        child: Text(
-                          "Members",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 22),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
+                              child: Text(
+                                "Members",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 22),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      MembersInside()
+                      MembersInside(),
+                      Container(
+                        height: 60,
+                        width: size.width * 0.8,
+                        margin: EdgeInsets.only(top: 40),
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.orangeAccent,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.orangeAccent,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20))),
+                              onPressed: () {
+                                //
+                              },
+                              child: Center(
+                                child: Text(
+                                  "BUY IT",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )),
+                        ),
+                      ),
                     ],
                   ),
                 ),

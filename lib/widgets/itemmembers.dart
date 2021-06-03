@@ -12,7 +12,7 @@ class MembersInside extends StatelessWidget {
       child: Row(
         children: [
           CardMembers(
-            imageMembers: "assets/images/poki.jpg",
+            imageMembers: "assets/images/plus1.png",
           ),
           CardMembers(
             imageMembers: "assets/images/hannah.png",
@@ -24,7 +24,7 @@ class MembersInside extends StatelessWidget {
             imageMembers: "assets/images/tenz2.jpg",
           ),
           CardMembers(
-            imageMembers: "assets/images/shroud.jpg",
+            imageMembers: "assets/images/poki.jpg",
           ),
         ],
       ),
