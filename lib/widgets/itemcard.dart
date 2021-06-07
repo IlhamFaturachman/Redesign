@@ -1,75 +1,65 @@
 import 'package:flutter/material.dart';
 
-class CardBapak extends StatelessWidget {
-  final String judul, gambar;
-  final String price;
-  const CardBapak({
-    Key key,
-    this.judul,
-    this.gambar,
-    this.price,
-  }) : super(key: key);
+class Func extends StatefulWidget {
+  @override
+  _FuncState createState() => _FuncState();
+}
+
+Widget getCard(index) {
+  var fullName = index['first_name'] + " " + index['last_name'];
+  var email = index['email'];
+  var avatar = index['avatar'];
+
+  return SingleChildScrollView(
+    padding: const EdgeInsets.all(5.0),
+    child: Card(
+      child: Container(
+        padding: const EdgeInsets.all(10.0),
+        child: ListTile(
+          title: Row(
+            children: <Widget>[
+              Container(
+                width: 60,
+                height: 70,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(30),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      avatar.toString(),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(width: 30),
+              Column(
+                children: <Widget>[
+                  Center(
+                    child: Text(fullName.toString(),
+                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                  ),
+                  SizedBox(height: 10),
+                  Center(
+                    child: Text(email.toString(),
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.grey,
+                            fontStyle: FontStyle.italic)),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+class _FuncState extends State<Func> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Container(
-            height: 70,
-            width: 70,
-            margin: EdgeInsets.only(
-              top: 10,
-              left: 30,
-            ),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                image: DecorationImage(
-                  image: AssetImage(gambar),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0),
-                    blurRadius: 20,
-                    offset: Offset(0, 7),
-                  )
-                ]),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(20, 30, 10, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                  child: Text(
-                    judul,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 19,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(
-                    10,
-                    5,
-                    100,
-                    5,
-                  ),
-                  child: Text(
-                    price,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 14,
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+    return Container();
   }
 }
