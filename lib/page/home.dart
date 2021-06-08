@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redesign/page/detail.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:redesign/widgets/itemcard%20copy.dart';
+import 'package:redesign/widgets/itemcard.dart';
 
 class Home extends StatefulWidget {
   @override
