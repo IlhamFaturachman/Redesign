@@ -40,71 +40,76 @@ class _CardItemState extends State<CardItem> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.5,
+      height: size.height * 0.54,
       child: ListView.builder(
         shrinkWrap: true,
         itemCount: users.length,
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Row(
-              children: <Widget>[
-                Container(
-                  height: 70,
-                  width: 70,
-                  margin: EdgeInsets.only(
-                    top: 30,
-                    left: 30,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(8),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        users[index]['avatar'].toString(),
-                      ),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0),
-                        blurRadius: 20,
-                        offset: Offset(0, 7),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(20, 30, 10, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        users[index]['first_name'].toString() +
-                            " " +
-                            users[index]['last_name'].toString(),
-                        style: TextStyle(fontSize: 15, color: Colors.black),
-                      ),
-                      SizedBox(height: 30),
-                      Text(
-                        users[index]['email'].toString(),
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.grey,
-                            fontStyle: FontStyle.italic),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+          return Padding(
+            padding: const EdgeInsets.only(
+              top: 0,
             ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (c) => Detail(),
-                ),
-              );
-            },
+            child: ListTile(
+              title: Row(
+                children: <Widget>[
+                  Container(
+                    height: 70,
+                    width: 70,
+                    margin: EdgeInsets.only(
+                      top: 30,
+                      left: 30,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(8),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          users[index]['avatar'].toString(),
+                        ),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0),
+                          blurRadius: 20,
+                          offset: Offset(0, 7),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(20, 30, 10, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          users[index]['first_name'].toString() +
+                              " " +
+                              users[index]['last_name'].toString(),
+                          style: TextStyle(fontSize: 15, color: Colors.black),
+                        ),
+                        SizedBox(height: 30),
+                        Text(
+                          users[index]['email'].toString(),
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.grey,
+                              fontStyle: FontStyle.italic),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (c) => Detail(),
+                  ),
+                );
+              },
+            ),
           );
         },
       ),
