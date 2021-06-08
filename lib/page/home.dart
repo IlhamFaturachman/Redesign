@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redesign/page/detail.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:redesign/widgets/itemcard.dart';
+import 'package:redesign/widgets/itemcard%20copy.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,31 +9,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List users = [];
-  bool isLoading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    this.fetchUser();
-  }
-
-  fetchUser() async {
-    var url = Uri.parse("https://reqres.in/api/users?page=2");
-    var response = await http.get(url);
-    if (response.statusCode == 200) {
-      var items = json.decode(response.body)['data'];
-      print(items);
-      setState(() {
-        users = items;
-      });
-    } else {
-      setState(() {
-        users = [];
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -121,22 +94,13 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  getBody(),
+                  CardItem(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
     );
-  }
-
-  Widget getBody() {
-    return ListView.builder(
-        shrinkWrap: true,
-        itemCount: users.length,
-        itemBuilder: (context, index) {
-          return getCard(users[index]);
-        });
   }
 }
