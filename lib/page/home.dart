@@ -94,6 +94,12 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
                   CardItem(),
                 ],
               ),
