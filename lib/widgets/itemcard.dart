@@ -45,6 +45,10 @@ class _CardItemState extends State<CardItem> {
         shrinkWrap: true,
         itemCount: users.length,
         itemBuilder: (BuildContext context, int index) {
+          var fullName =
+              users[index]['first_name'] + " " + users[index]['last_name'];
+          var email = users[index]['email'];
+          var avatar = users[index]['avatar'];
           return Padding(
             padding: const EdgeInsets.only(
               top: 0,
@@ -65,7 +69,7 @@ class _CardItemState extends State<CardItem> {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                          users[index]['avatar'].toString(),
+                          avatar.toString(),
                         ),
                       ),
                       boxShadow: [
@@ -82,15 +86,10 @@ class _CardItemState extends State<CardItem> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          users[index]['first_name'].toString() +
-                              " " +
-                              users[index]['last_name'].toString(),
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                        ),
+                        Text(fullName.toString()),
                         SizedBox(height: 30),
                         Text(
-                          users[index]['email'].toString(),
+                          email.toString(),
                           style: TextStyle(
                               fontSize: 15,
                               color: Colors.grey,
@@ -105,7 +104,11 @@ class _CardItemState extends State<CardItem> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (c) => Detail(),
+                    builder: (c) => Detail(
+                      avatar: '$avatar',
+                      email: '$email',
+                      fullName: '$fullName',
+                    ),
                   ),
                 );
               },

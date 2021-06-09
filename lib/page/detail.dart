@@ -1,11 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redesign/const/constants.dart';
-import 'package:redesign/widgets/itemdetail.dart';
 import 'package:redesign/widgets/iteminside.dart';
 import 'package:redesign/widgets/itemmembers.dart';
 
 class Detail extends StatefulWidget {
+  final avatar;
+  final fullName;
+  final email;
+
+  const Detail({Key key, this.avatar, this.fullName, this.email, value})
+      : super(key: key);
+
   @override
   _DetailState createState() => _DetailState();
 }
@@ -52,7 +58,73 @@ class _DetailState extends State<Detail> {
                 child: Container(
                   child: Column(
                     children: [
-                      ItemDetail(),
+                      Container(
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 70,
+                              width: 70,
+                              margin: EdgeInsets.only(
+                                left: 30,
+                              ),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40.0),
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      '${widget.avatar}'.toString(),
+                                    ),
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0),
+                                      blurRadius: 20,
+                                      offset: Offset(0, 7),
+                                    )
+                                  ]),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(20, 30, 10, 25),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.fromLTRB(10, 5, 10, 10),
+                                    child: Text(
+                                      '${widget.fullName}'.toString(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 25,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                            10,
+                                            0,
+                                            0,
+                                            0,
+                                          ),
+                                          child: Text(
+                                            '${widget.email}',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),

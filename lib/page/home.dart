@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
           Navigator.push(
             context,
             MaterialPageRoute(
+              // ignore: missing_required_param
               builder: (context) => Detail(),
             ),
           );
