@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redesign/const/constants.dart';
+import 'package:redesign/page/home.dart';
 import 'package:redesign/widgets/iteminside.dart';
 import 'package:redesign/widgets/itemmembers.dart';
 
@@ -43,7 +44,14 @@ class _DetailState extends State<Detail> {
                           icon: Icon(Icons.cancel),
                           iconSize: 40,
                           color: Colors.white,
-                          onPressed: () {}),
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (p) => Home(),
+                              ),
+                            );
+                          }),
                     ),
                   ],
                 ),
