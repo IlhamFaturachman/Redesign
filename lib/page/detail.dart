@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:redesign/const/constants.dart';
 import 'package:redesign/page/home.dart';
 import 'package:redesign/widgets/iteminside.dart';
@@ -99,9 +100,9 @@ class _DetailState extends State<Detail> {
                                     margin: EdgeInsets.fromLTRB(10, 5, 10, 10),
                                     child: Text(
                                       '${widget.fullName}'.toString(),
-                                      style: TextStyle(
+                                      style: GoogleFonts.montserrat(
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 25,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -157,7 +158,7 @@ class _DetailState extends State<Detail> {
                           children: [
                             Text(
                               "Details",
-                              style: TextStyle(
+                              style: GoogleFonts.ubuntu(
                                 fontSize: 30,
                               ),
                             ),
@@ -189,21 +190,22 @@ class _DetailState extends State<Detail> {
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.orangeAccent,
                           child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.orangeAccent,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20))),
-                              onPressed: () {
-                                //
-                              },
-                              child: Center(
-                                child: Text(
-                                  "BUY IT",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              )),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.orangeAccent,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20))),
+                            onPressed: () {
+                              //
+                            },
+                            child: Center(
+                              child: Text(
+                                "BUY IT",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],
